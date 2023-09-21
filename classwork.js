@@ -12,7 +12,7 @@ const productPrices = [25.99, 15.49, 10.99, 34.99, 8.99]
 function arrangeHL(){
     return productPrices.sort((a,b)=>a-b).reverse()
 }
-
+//average prices
 let prices = [25.99, 15.49, 10.99, 34.99, 8.99];
 let sum = 0;
 
