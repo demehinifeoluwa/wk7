@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html{
+            background-color: black;
+            color: greenyellow;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</body>
+    <script>
+        const tues = document.querySelectorAll('li')
+        const students = new Array()
+        const absentStudents =['samuel', 'tope']
+
+        students.push('victor', 'ife')
+        students.push('micheal')
+
+        tues[0].textContent = 'Push micheal to array: '+ students
+
+        //add multiple students from an array
+        students.push(...absentStudents)
+        tues[1].innerHTML = '<strong> Add multiple students:</strong> '+students
+
+        //add iniubong at the beginning of the array
+        students.unshift('iniubong', 'miracle')
+        tues[2].innerHTML = '<strong> Add students at the:</strong> '+students
+
+        //remove from the last
+        students.pop()
+        tues[3].innerHTML = '<strong> remove last student:</strong> '+students
+
+        //remove the first
+        tues[3].innerHTML = '<strong> remove the first student:</strong> '+students
+
+        //make a copy of an array
+        let frontendStudents = students.slice()
+        tues[4].innerHTML = '<strong>create another array:</strong> '+frontendStudents
+
+        //add samuel after victor
+        frontendStudents.splice(2,0, 'samuel')
+        tues[5].innerHTML = '<strong>add another name:</strong> '+frontendStudents
+
+        //add two names and remove two
+        frontendStudents.splice(3,2, 'badmus', 'franc')
+        tues[5].innerHTML = '<strong>add more names and remove names:</strong> '+frontendStudents
+
+        //remove franc
+        frontendStudents.splice(frontendStudents.indexOf('franc'), 2)
+        tues[6].innerHTML = '<strong>remove franc :</strong> '+frontendStudents
+        //find if a name exixsts within an array
+        frontendStudents.includes('lizzy')
+        tues[6].innerHTML = '<strong>remove franc :</strong> '+frontendStudents
+        
+        //find if a name exists within an array
+
+        tues[6].innerHTML = '<strong>check if lizzy is in our class :</strong> '+frontendStudents.includes('lizzy')
+        tues[7].innerHTML = '<strong>check if ife is in our class :</strong> '+frontendStudents.includes('ife')
+        tues[7].innerHTML = '<strong>check if victor is in our class :</strong> '+frontendStudents.includes('victor')
+
+
+        //find a position of a name
+        tues[8].innerHTML = '<strong>find the position of samuel:</strong> '+ frontendStudents.indexOf('samuel')
+        tues[9].innerHTML = '<strong>find the last position of samuel:</strong> '+ frontendStudents.lastIndexOf('samuel')
+
+        tues[10].innerHTML = '<strong>data type of an array:</strong> '+ typeof(frontendStudents)
+
+        //convert an array from object to string
+        tues[11].innerHTML = '<strong>convert to string:</strong>'+ frontendStudents.join('-')
+
+        let names = 'daniel joushua amarachi richard tomiwa jeronla nifemi oyinade eni abigail'
+        frontendStudents.push(...names.split(' '))
+        tues[12].innerHTML = '<strong>add more names:</strong> '+ frontendStudents.join('-')
+
+        //student with names less than 5 characters
+        tues[13].innerHTML ='<strong>less than five characters:</strong> '+frontendStudents.filter(name => name.lenght < 5)
+
+        //first name less than 5 characters
+        tues[14].innerHTML ='<strong>first name less than five characters:</strong> '+frontendStudents.find(name => name.lenght < 5)
+
+        //sort in asensding order
+        tues[15].innerHTML ='<strong>names sorted:</strong> '+frontendStudents.sort()
+
+        //make each name to start with an uppercase
+        tues[16].innerHTML =  '<strong>Capitalise each name:</strong>' +frontendStudents.map(name => name.replace(name[0], name[0].toUpperCase()))
+        console.log(students)
+    </script>
+</html>
